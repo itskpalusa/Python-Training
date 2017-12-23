@@ -7,7 +7,7 @@ import sys
 
 from peewee import *
 
-db = SqliteDatabase('diaryentries.db')
+db = SqliteDatabase('diary.db')
 
 
 class Entry(Model):
