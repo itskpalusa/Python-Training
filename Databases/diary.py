@@ -24,6 +24,10 @@ def initialize():
     db.create_tables([Entry], safe=True)
 
 
+def clear():
+    os.system('cls' if os.name == 'nt' else 'clear')
+
+
 def menu_loop():
     """Show the menu"""
     choice = None
@@ -60,6 +64,7 @@ def view_entries(search_query=None):
         print(timestamp)
         print('='*len(timestamp))
         print(entry.content)
+        print('\n\n'+'='*len(timestamp))
         print('n) next entry')
         print('d) delete entry')
         print('q) return to main menu')
@@ -71,7 +76,7 @@ def view_entries(search_query=None):
             delete_entry(entry)
             print("entry deleted")
 
-            
+
 def search_entries():
     """Search entries for a string."""
     view_entries(input('Search query: '))
