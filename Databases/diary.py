@@ -33,6 +33,7 @@ def menu_loop():
     choice = None
 
     while choice != 'q':
+        clear()
         # if choice isn't q
         print("Enter 'q' to quit.")
         for key, value in menu.items():
@@ -41,6 +42,7 @@ def menu_loop():
         choice = input('Action: ').lower().strip()
 
         if choice in menu:
+            clear()
             menu[choice]()
 
 def add_entry():
@@ -61,6 +63,7 @@ def view_entries(search_query=None):
 
     for entry in entries:
         timestamp = entry.timestamp.strftime('%A %B %d, %Y %I:%M%p')
+        clear()
         print(timestamp)
         print('='*len(timestamp))
         print(entry.content)
