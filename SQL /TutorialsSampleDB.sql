@@ -5,20 +5,21 @@ CREATE TABLE [Books] (
 );
 INSERT INTO Books VALUES(1, 'Harry Potter and the Order of the Phoenix', 'J.K. Rowling', RAND(1000,5000));
 
-
 CREATE TABLE [User] (
-    [StudentId] INTEGER  PRIMARY KEY NOT NULL,
-    [StudentName] NVARCHAR(50) NOT NULL,
+    [SchoolId] INTEGER  PRIMARY KEY NOT NULL,
+    [Name] NVARCHAR(50) NOT NULL,
+    [Usertype] VARCHAR(6) NOT NULL CHECK (Usertype IN ('Student', 'Staff')),
 );
-INSERT INTO Students VALUES(1, 'Michael');
-INSERT INTO Students VALUES(2, 'John');
-INSERT INTO Students VALUES(3, 'Jack');
-INSERT INTO Students VALUES(4, 'Sara');
-INSERT INTO Students VALUES(5, 'Sally');
-INSERT INTO Students VALUES(6, 'Jena');
-INSERT INTO Students VALUES(7, 'Nancy');
+INSERT INTO User VALUES(1, 'Michael');
+INSERT INTO User VALUES(2, 'John');
+INSERT INTO User VALUES(3, 'Jack');
+INSERT INTO User VALUES(4, 'Sara');
+INSERT INTO User VALUES(5, 'Sally');
+INSERT INTO User VALUES(6, 'Jena');
+INSERT INTO User VALUES(7, 'Nancy');
 
-CREATE TABLE [Date] (
-  [Date] DATETIME
+CREATE TABLE [Loans] (
+  [loanDate] DATETIME
+  [dueDate] loanDate + loan_time(user)
 
 )
